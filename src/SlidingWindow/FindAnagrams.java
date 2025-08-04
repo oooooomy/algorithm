@@ -1,4 +1,4 @@
-package org.oooooomy.sw;
+package org.oooooomy.SlidingWindow;
 
 import java.util.*;
 
