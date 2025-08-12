@@ -11,6 +11,15 @@ public class GetIntersectionNode {
         System.out.println(getIntersectionNodeSlow(headA, headB));
     }
 
+    public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ListNode p = headA, q = headB;
+        while (p != q) {
+            p = p != null ? p.next : headB;
+            q = q != null ? q.next : headA;
+        }
+        return p;
+    }
+
     public static ListNode getIntersectionNodeSlow(ListNode headA, ListNode headB) {
         ListNode pA = headA, pB = headB;
         int lenA = 0, lenB = 0;
