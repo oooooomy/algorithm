@@ -6,10 +6,10 @@ package org.oooooomy.bs;
 public class SearchInsert {
 
     public static void main(String[] args) {
-        System.out.println(SearchInsert.searchInsert(new int[]{1, 3, 5, 6}, 5));
+        System.out.println(new SearchInsert().searchInsert(new int[]{1, 3, 5, 6}, 5));
     }
 
-    public static int searchInsert(int[] nums, int target) {
+    public int searchInsert(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
         int mid;
@@ -25,7 +25,7 @@ public class SearchInsert {
         return left;
     }
 
-//    public static int searchInsert(int[] nums, int target) {
+//    public int searchInsert(int[] nums, int target) {
 //        int left = 0;
 //        int right = nums.length - 1;
 //        int mid;

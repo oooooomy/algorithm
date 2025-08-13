@@ -5,7 +5,7 @@ package org.oooooomy.skill;
  */
 public class SortColors {
 
-    public static void sortColors(int[] nums) {
+    public void sortColors(int[] nums) {
         int p0 = 0, p1 = 0;
         for (int i = 0; i < nums.length; i++) {
             int cur = nums[i];

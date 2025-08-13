@@ -8,7 +8,7 @@ import java.util.*;
 public class SingleNumber {
 
     //最优解
-    public static int singleNumber(int[] nums) {
+    public int singleNumber(int[] nums) {
         int ans = nums[0];
         if (nums.length > 1) {
             for (int i = 1; i < nums.length; i++) {
@@ -19,7 +19,7 @@ public class SingleNumber {
     }
 
 
-    public static int singleNumber2(int[] nums) {
+    public int singleNumber2(int[] nums) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i : nums) {
             if (map.containsKey(i)) {

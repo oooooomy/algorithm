@@ -8,10 +8,10 @@ public class GetIntersectionNode {
     public static void main(String[] args) {
         ListNode headA = ListNode.create(new int[]{4, 1, 8, 4, 5});
         ListNode headB = ListNode.create(new int[]{5, 6, 1, 8, 4, 5});
-        System.out.println(getIntersectionNodeSlow(headA, headB));
+        System.out.println(new GetIntersectionNode().getIntersectionNodeSlow(headA, headB));
     }
 
-    public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode p = headA, q = headB;
         while (p != q) {
             p = p != null ? p.next : headB;
@@ -20,7 +20,7 @@ public class GetIntersectionNode {
         return p;
     }
 
-    public static ListNode getIntersectionNodeSlow(ListNode headA, ListNode headB) {
+    public ListNode getIntersectionNodeSlow(ListNode headA, ListNode headB) {
         ListNode pA = headA, pB = headB;
         int lenA = 0, lenB = 0;
         while (pA != null) {

@@ -5,17 +5,10 @@ package org.oooooomy.list;
  */
 public class Partition {
 
-    public static void main(String[] args) {
-        ListNode node = ListNode.create(new int[]{1, 4, 3, 2, 5, 2});
-        node.print();
-        ListNode partition = partition(node, 3);
-        partition.print();
-    }
-
     /**
      * 错误做法
      */
-//    public static ListNode partition(ListNode head, int x) {
+//    public ListNode partition(ListNode head, int x) {
 //        ListNode p = head;
 //        ListNode dummy1 = new ListNode();
 //        ListNode dummy2 = new ListNode();
@@ -35,7 +28,7 @@ public class Partition {
 //        return dummy1.next;
 //    }
 
-    public static ListNode partition(ListNode head, int x) {
+    public ListNode partition(ListNode head, int x) {
         ListNode p = head;
         ListNode dummy1 = new ListNode();
         ListNode dummy2 = new ListNode();
