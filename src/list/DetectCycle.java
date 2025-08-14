@@ -6,7 +6,7 @@ package org.oooooomy.list;
 public class DetectCycle {
 
     public ListNode detectCycle(ListNode head) {
-
+        return null;
     }
 
 }
