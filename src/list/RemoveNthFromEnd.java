@@ -17,6 +17,8 @@ public class RemoveNthFromEnd {
         for (int i = 0; i < n; i++) {
             right = right.next;
         }
+        //为什么是right.next != null 而不是 right != null
+        //可以即使n=1，也保证了left为前一个指针
         while (right.next != null) {
             left = left.next;
             right = right.next;
