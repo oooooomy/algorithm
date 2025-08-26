@@ -2,6 +2,9 @@ package org.oooooomy.list;
 
 import java.util.*;
 
+/**
+ * 146. LRU 缓存
+ */
 public class LRUCache {
 
     Map<Integer, Node> map;
