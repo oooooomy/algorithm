@@ -7,23 +7,35 @@ import java.util.*;
  */
 public class LRUCache {
 
-    Map<Integer, Node> map;
-
-    int capacity;
-
-    static class Node {
-        int val;
+    private static class Node {
+        int key, val;
         Node prev, next;
+
+        Node(int key, int val) {
+            this.key = key;
+            this.val = val;
+        }
     }
+
+    private final Map<Integer, Node> map;
+    private final int capacity;
+    private final Node dummy = new Node(0, 0);
 
     public LRUCache(int capacity) {
         this.capacity = capacity;
         map = new HashMap<>(capacity);
+        dummy.next = dummy;
+        dummy.prev = dummy;
     }
 
     public int get(int key) {
         Node node = map.get(key);
-        return node == null ? -1 : node.val;
+        if (node == null) {
+            return -1;
+        }
+        //node最近使用，放在最头部节点
+        refresh(node);
+        return node.val;
     }
 
     /**
@@ -37,22 +49,45 @@ public class LRUCache {
     public void put(int key, int value) {
         //存在
         if (map.containsKey(key)) {
-            map.get(key).val = value;
+            Node node = map.get(key);
+            node.val = value;
+            refresh(node);
             return;
         }
         //不存在
-        if (map.size() < this.capacity) {
-            Node node = new Node();
-            node.val = value;
-            node.prev = null;
-            node.next = null;
-            map.put(key, node);
-            //TODO insert linked list
-        } else {
-            //TODO 删除map对应元素
-            //TODO 删除链表元素
-            //TODO 插入链表元素
+        if (map.size() == this.capacity) {
+            removeLast();
         }
+        Node node = offerFirst(key, value);
+        map.put(key, node);
+    }
+
+    private void refresh(Node node) {
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
+
+        node.next = dummy.next;
+        node.next.prev = node;
+
+        dummy.next = node;
+        node.prev = dummy;
+    }
+
+    private void removeLast() {
+        Node deleted = dummy.prev;
+        dummy.prev = deleted.prev;
+        deleted.prev.next = dummy;
+        map.remove(deleted.key);
+    }
+
+    private Node offerFirst(int key, int value) {
+        Node next = dummy.next;
+        Node node = new Node(key, value);
+        node.next = next;
+        next.prev = node;
+        dummy.next = node;
+        node.prev = dummy;
+        return node;
     }
 
 }
