@@ -1,4 +1,4 @@
-package org.oooooomy.BT;
+package org.oooooomy.BinaryTree;
 
 /**
  * 101. 对称二叉树

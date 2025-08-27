@@ -1,8 +1,11 @@
-package org.oooooomy.BT;
+package org.oooooomy.BinaryTree;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 199. 二叉树的右视图
+ */
 public class RightSideView {
 
     List<Integer> res = new ArrayList<>();

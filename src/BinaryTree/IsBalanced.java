@@ -1,4 +1,4 @@
-package org.oooooomy.BT;
+package org.oooooomy.BinaryTree;
 
 /**
  * 110. 平衡二叉树

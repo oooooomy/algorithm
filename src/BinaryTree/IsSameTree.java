@@ -1,4 +1,4 @@
-package org.oooooomy.BT;
+package org.oooooomy.BinaryTree;
 
 /**
  * 100. 相同的树

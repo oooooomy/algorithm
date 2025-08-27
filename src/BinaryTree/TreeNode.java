@@ -1,4 +1,4 @@
-package org.oooooomy.BT;
+package org.oooooomy.BinaryTree;
 
 public class TreeNode {
     int val;
